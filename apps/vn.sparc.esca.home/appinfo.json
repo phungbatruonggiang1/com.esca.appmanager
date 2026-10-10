@@ -1,0 +1,12 @@
+{
+  "id": "vn.sparc.esca.home",
+  "title": "ESCA Home",
+  "type": "native",
+  "main": "/home/weston/data/esca-home/esca_home",
+  "icon": "/usr/share/esca/applications/vn.sparc.esca.home/icon.png",
+  "removable": false,
+  "user": "weston",
+  "env": {
+    "GDK_BACKEND": "wayland"
+  }
+}

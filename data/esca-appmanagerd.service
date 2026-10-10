@@ -1,0 +1,21 @@
+[Unit]
+Description=ESCA application manager
+Requires=dbus.socket
+After=dbus.socket
+# Applications are Wayland clients, so there is no point launching any of them
+# before the compositor exists.
+After=weston.service
+
+[Service]
+Type=dbus
+BusName=vn.sparc.esca.AppManager1
+ExecStart=/usr/sbin/esca-appmanagerd
+Restart=on-failure
+RestartSec=2
+
+# Root, because it launches applications as other users (weston) and needs to
+# signal them afterwards.
+User=root
+
+[Install]
+WantedBy=multi-user.target
