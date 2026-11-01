@@ -1,10 +1,8 @@
 // The catalogue, the running applications and the policy between them.
 //
-// This is SAM's RunningAppList plus PolicyManager, minus everything that only
-// means something inside webOS: no launch points (our launcher reads the
-// catalogue directly), no foreground tracking (Weston does not tell us who is
-// on top), and no install/remove (that is the package manager's job, as it is
-// SAM's AppInstallService).
+// The running list plus the launch policy. Deliberately absent: launch points
+// (our launcher reads the catalogue directly), foreground tracking (Weston does
+// not tell us who is on top), and install/remove (the package manager's job).
 
 #pragma once
 

@@ -1,8 +1,7 @@
 // Starting and stopping an application process.
 //
-// SAM hands each application type to its own life handler -- web apps go to
-// WAM, native ones to a container. The same seam is here: NativeLifeHandler is
-// the only implementation, and a Flutter or web runtime would be another.
+// Each application type has its own life handler. NativeLifeHandler is the
+// only implementation so far; a Flutter or web runtime would be another.
 
 #pragma once
 
