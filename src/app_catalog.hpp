@@ -1,8 +1,7 @@
 // The list of installed applications, read from appinfo.json files.
 //
-// SAM keeps AppDescription/AppDescriptionList for this and treats installation
-// as somebody else's job (AppInstallService). Same split here: the catalogue
-// reads what is on disk, and the package manager puts it there.
+// Installation is somebody else's job: the catalogue reads what is on disk,
+// and the package manager puts it there.
 
 #pragma once
 

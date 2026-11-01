@@ -3,9 +3,8 @@
 Who is installed, who is running, and who may start or stop them — one service
 that answers all three, over D-Bus.
 
-It is webOS's SAM rearranged for this system: the same split between a
-catalogue, a running list and per-type life handlers, with Luna bus replaced by
-D-Bus and the webOS-only parts left out.
+It is split into a catalogue, a running list and per-type life handlers,
+all behind one D-Bus interface.
 
 ## What it does
 
@@ -18,12 +17,12 @@ D-Bus and the webOS-only parts left out.
 
 ## What it deliberately does not do
 
-- **No launch points.** In webOS they are the launcher's model of shortcuts.
-  Our launcher is the Flutter dashboard, and it can read the catalogue.
-- **No foreground tracking.** SAM learns this from LSM. Weston tells nobody
-  which client is on top, so `getForegroundAppInfo` would be a guess.
-- **No install or remove.** SAM delegates to AppInstallService; here the
-  package manager owns that, and `Reload` picks up the result.
+- **No launch points.** Our launcher is the Flutter dashboard, and it can
+  read the catalogue.
+- **No foreground tracking.** Weston tells nobody which client is on top,
+  so a "foreground application" query would be a guess.
+- **No install or remove.** The package manager owns that, and `Reload`
+  picks up the result.
 - **Only native applications.** `type` is checked, and a web or QML app is
   refused rather than silently not started, because there is no runtime to
   hand it to yet. That is the seam `ILifeHandler` exists for.
